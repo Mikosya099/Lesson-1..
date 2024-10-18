@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles and Nouns Grammar Practice</title>
+    <style>
+        body {
+            background-color: #1c1f2b;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #ac0808;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            background-color: #1c2336;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #2b2f3a;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #3e4859;
+        }
+        .content {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            border-bottom: 2px solid #3e4859;
+            padding-bottom: 10px;
+        }
+        .exercise {
+            background-color: #2b2f3a;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .exercise input[type="text"], .exercise textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #1c2336;
+            color: #ffffff;
+            border: 1px solid #3e4859;
+            border-radius: 5px;
+        }
+        .exercise button {
+            padding: 10px 20px;
+            background-color: #283148;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .exercise button:hover {
+            background-color: #3e4859;
+        }
+        .feedback {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .correct {
+            background-color: #4caf50;
+        }
+        .incorrect {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Articles and Nouns: Grammar Practice</h1>
+    </header>
+    <nav>
+        <a href="#reading">Reading</a>
+        <a href="#writing">Writing</a>
+        <a href="#listening">Listening</a>
+        <a href="#speaking">Speaking</a>
+    </nav>
+    <div class="content">
+        <!-- Reading Section -->
+        <section id="reading" class="section">
+            <h2>Reading</h2>
+            <div class="exercise">
+                <p>Read the text and complete the exercises below:</p>
+                <p>"A cat is an animal that has fur and sharp claws. Cats can be wild or domesticated. The domesticated cat is usually found in homes."</p>
+                <!-- Exercise 1 -->
+                <p>1. Fill in the blanks: "__ cat is an animal."</p>
+                <input type="text" id="reading-ex1">
+                <button onclick="checkReadingEx1()">Check Answer</button>
+                <div id="reading-feedback1" class="feedback"></div>
+            </div>
+            <!-- Other Reading Exercises go here -->
+        </section>
+
+        <!-- Writing Section -->
+        <section id="writing" class="section">
+            <h2>Writing</h2>
+            <div class="exercise">
+                <p>Write a short paragraph using articles and nouns correctly:</p>
+                <textarea id="writing-ex1" rows="4"></textarea>
+                <button onclick="checkWritingEx1()">Check Answer</button>
+                <div id="writing-feedback1" class="feedback"></div>
+            </div>
+            <!-- Other Writing Exercises go here -->
+        </section>
+
+        <!-- Listening Section -->
+        <section id="listening" class="section">
+            <h2>Listening</h2>
+            <div class="exercise">
+                <p>Listen to the audio and fill in the blanks:</p>
+                <!-- Audio can be added with <audio> tags and controls -->
+                <audio controls>
+                    <source src="audio/sample.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <p>1. "__ dog is barking loudly."</p>
+                <input type="text" id="listening-ex1">
+                <button onclick="checkListeningEx1()">Check Answer</button>
+                <div id="listening-feedback1" class="feedback"></div>
+            </div>
+            <!-- Other Listening Exercises go here -->
+        </section>
+
+        <!-- Speaking Section -->
+        <section id="speaking" class="section">
+            <h2>Speaking</h2>
+            <div class="exercise">
+                <p>Practice the following sentences aloud:</p>
+                <p>1. "The cat is sleeping on the mat."</p>
+                <!-- A button to simulate speaking practice -->
+                <button onclick="checkSpeakingEx1()">I have practiced</button>
+                <div id="speaking-feedback1" class="feedback"></div>
+            </div>
+            <!-- Other Speaking Exercises go here -->
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Grammar Practice Site</p>
+    </footer>
+
+    <script>
+        // JavaScript code for auto-checking the exercises
+        function checkReadingEx1() {
+            let answer = document.getElementById('reading-ex1').value.trim().toLowerCase();
+            let feedback = document.getElementById('reading-feedback1');
+            if (answer === 'a') {
+                feedback.textContent = 'Correct!';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'Incorrect, the correct answer is "a".';
+                feedback.className = 'feedback incorrect';
+            }
+            feedback.style.display = 'block';
+        }
+
+        function checkWritingEx1() {
+            // A placeholder function for writing feedback
+            let feedback = document.getElementById('writing-feedback1');
+            feedback.textContent = 'Your writing has been submitted!';
+            feedback.className = 'feedback correct';
+            feedback.style.display = 'block';
+        }
+
+        function checkListeningEx1() {
+            let answer = document.getElementById('listening-ex1').value.trim().toLowerCase();
+            let feedback = document.getElementById('listening-feedback1');
+            if (answer === 'the') {
+                feedback.textContent = 'Correct!';
+                feedback.className = 'feedback correct';
+            } else {
+                feedback.textContent = 'Incorrect, the correct answer is "the".';
+                feedback.className = 'feedback incorrect';
+            }
+            feedback.style.display = 'block';
+        }
+
+        function checkSpeakingEx1() {
+            let feedback = document.getElementById('speaking-feedback1');
+            feedback.textContent = 'Well done! Keep practicing.';
+            feedback.className = 'feedback correct';
+            feedback.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
